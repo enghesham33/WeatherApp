@@ -6,7 +6,12 @@ target 'WeatherApp' do
   use_frameworks!
 
   # Pods for WeatherApp
-
+  pod 'Alamofire', '5.9.1'
+  pod 'RealmSwift', '20.0.0'
+  pod 'SwiftLoader', '1.0.0'
+  pod 'Swinject', '2.9.1'
+  pod 'Toast-Swift', '5.1.1'
+  
   target 'WeatherAppTests' do
     inherit! :search_paths
     # Pods for testing
