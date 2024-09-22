@@ -13,7 +13,7 @@
 
 # This project uses MVVM for the implementation
 
-# You will find sample of test cases for each screen. It is not all the cases but for having a good example for unit testing. The test cases are for the following:
+# You will find sample of test cases. It is not all the cases but for having a good example for unit testing. The test cases are for the following:
 - DateManager
 - DI
 - EndPoints
