@@ -33,3 +33,26 @@ class CitiesListService: CitiesListServiceProtocol {
         }, failedHandler: failedHandler)
     }
 }
+
+class CitiesListFakeService: CitiesListServiceProtocol {
+    func getCitiesList(completionHandler: @escaping ([CityRealm]) -> Void) {
+        completionHandler(getFakeLocalCities())
+    }
+    
+    func searchForCity(query: String, completionHandler: @escaping ([City]) -> Void, failedHandler: @escaping (String?) -> Void) {
+        completionHandler(getFakeRemoteCities())
+    }
+    
+    private func getFakeLocalCities() -> [CityRealm] {
+        let city1 = CityRealm(cityId: 1, name: "Fake Local City 1", region: "", country: "", lat: 0.0, lon: 0.0, url: "", forecast: nil)
+        let city2 = CityRealm(cityId: 2, name: "Fake Local City 2", region: "", country: "", lat: 0.0, lon: 0.0, url: "", forecast: nil)
+        
+        return [city1, city2]
+    }
+    
+    private func getFakeRemoteCities() -> [City] {
+        let city1 = City(id: 1, name: "Fake Remote City 1", region: "", country: "", lat: 0.0, lon: 0.0, url: "")
+        let city2 = City(id: 2, name: "Fake Remote City 2", region: "", country: "", lat: 0.0, lon: 0.0, url: "")
+        return [city1, city2]
+    }
+}

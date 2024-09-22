@@ -54,6 +54,7 @@ class CityForecastViewModel: CityForecastViewModelProtocol {
         
         if let localCity {
             getLocalForecast(cityId: localCity.cityId)
+            refreshLocalForecast()
         } else {
             getRemoteForecast(cityName: remoteCity?.name ?? "")
         }

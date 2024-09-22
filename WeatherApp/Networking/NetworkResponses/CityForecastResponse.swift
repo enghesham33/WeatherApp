@@ -14,6 +14,12 @@ struct CityForecastResponse: Codable {
     let current: CurrentForecast?
     let forecast: Forecast?
     
+    public init() {
+        location = Location(name: "London", region: nil, country: nil, lat: nil, lon: nil, tzID: nil, localtimeEpoch: nil, localtime: nil)
+        current = nil
+        forecast = nil
+    }
+    
     func convertToCityForecastRealm() -> CityForecastRealm {
         let daysList = List<DayRealm>()
         daysList.append(

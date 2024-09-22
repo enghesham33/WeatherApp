@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol CityForecastServiceProtocol {
     func getLocalCityForecast(cityId: Int, completionHandler: @escaping (CityForecastRealm) -> Void, failedHandler: @escaping (String?) -> Void)
@@ -33,5 +34,15 @@ class CityForecastService: CityForecastServiceProtocol {
         } else {
             failedHandler("City is not saved in the DB")
         }
+    }
+}
+
+class CityForecastFakeService: CityForecastServiceProtocol {
+    func getLocalCityForecast(cityId: Int, completionHandler: @escaping (CityForecastRealm) -> Void, failedHandler: @escaping (String?) -> Void) {
+        completionHandler(CityForecastRealm(condition: ConditionRealm(text: "Sunny", icon: "", code: 10), windKph: 20.7, humidity: 80.44, tempC: 32.1, days: List<DayRealm>()))
+    }
+    
+    func getCityForecast(query: String, numberOfDays: Int, completionHandler: @escaping (CityForecastResponse) -> Void, failedHandler: @escaping (String?) -> Void) {
+        completionHandler(CityForecastResponse())
     }
 }
