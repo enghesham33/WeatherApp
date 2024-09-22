@@ -29,7 +29,11 @@ class RealmManager {
             objects.append(result)
         }
         return objects
-       
+        
+    }
+    
+    func getObjectIfExist(_ T : Object.Type, remoteId: Int) -> Object? {
+        return getAllDataFor(T, filterdBy: "cityId == \(remoteId)").first
     }
     
     func deleteAllDataFor(_ T : Object.Type) {
@@ -39,6 +43,14 @@ class RealmManager {
     func replaceAllDataFor(_ T : Object.Type, with objects : [Object]) {
         deleteAllDataFor(T)
         add(objects)
+    }
+    
+    func add(_ object : Object, completion : @escaping () -> ()) {
+        
+        try? realm.write{
+            realm.add(object)
+            completion()
+        }
     }
     
     func add(_ objects : [Object], completion : @escaping() -> ()) {
@@ -54,7 +66,7 @@ class RealmManager {
         }
     }
     
-    func update(_ block: @escaping ()->Void) {
+    func update(_ block: @escaping () -> Void) {
         try? realm.write(block)
     }
     
@@ -74,7 +86,7 @@ class RealmManager {
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
                 }
-        })
+            })
         
         Realm.Configuration.defaultConfiguration = config
     }

@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitiesViewController" customModule="WeatherApp" customModuleProvider="target">
             <connections>
+                <outlet property="citiesTableView" destination="Coy-9r-pZc" id="bU9-OG-EY9"/>
+                <outlet property="noDataAvailableLabel" destination="cCy-O4-g8b" id="qVQ-Fu-t2B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,8 +20,31 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to cities screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-O4-g8b">
-                    <rect key="frame" x="101.33333333333333" y="428" width="190.66666666666669" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My saved cities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVF-8u-cS3">
+                    <rect key="frame" x="138" y="59" width="117" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlv-vV-K6H">
+                    <rect key="frame" x="347" y="59" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Wnz-jv-XHh"/>
+                        <constraint firstAttribute="width" constant="30" id="ydw-Rs-B99"/>
+                    </constraints>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="search"/>
+                    <connections>
+                        <action selector="searchButtonClicked:" destination="-1" eventType="touchUpInside" id="Bi6-7a-3NX"/>
+                    </connections>
+                </button>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Coy-9r-pZc">
+                    <rect key="frame" x="16" y="89" width="361" height="713"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data available. Please click on search button to search for cities" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCy-O4-g8b">
+                    <rect key="frame" x="16" y="418.33333333333331" width="361" height="40.666666666666686"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -28,13 +53,25 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Coy-9r-pZc" firstAttribute="top" secondItem="UVF-8u-cS3" secondAttribute="bottom" id="3zS-gK-t95"/>
+                <constraint firstItem="Coy-9r-pZc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Dqr-wC-Xv2"/>
+                <constraint firstItem="UVF-8u-cS3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Mtg-kc-J2n"/>
                 <constraint firstItem="cCy-O4-g8b" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="NEN-0b-2zA"/>
+                <constraint firstItem="cCy-O4-g8b" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="TvK-Q6-k6y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Coy-9r-pZc" secondAttribute="trailing" constant="16" id="VIg-io-qYw"/>
+                <constraint firstItem="UVF-8u-cS3" firstAttribute="bottom" secondItem="Mlv-vV-K6H" secondAttribute="bottom" id="X8C-2a-NNO"/>
+                <constraint firstItem="Mlv-vV-K6H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ylf-Ou-grm"/>
                 <constraint firstItem="cCy-O4-g8b" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Zav-Vx-4hU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Coy-9r-pZc" secondAttribute="bottom" constant="16" id="aB4-yU-LUQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="cCy-O4-g8b" secondAttribute="leading" constant="-16" id="lqM-xZ-mcP"/>
+                <constraint firstItem="UVF-8u-cS3" firstAttribute="top" secondItem="Mlv-vV-K6H" secondAttribute="top" id="sIY-wl-Zpg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mlv-vV-K6H" secondAttribute="trailing" constant="16" id="zxa-CH-VmZ"/>
             </constraints>
             <point key="canvasLocation" x="123" y="-11"/>
         </view>
     </objects>
     <resources>
+        <image name="search" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,6 +11,7 @@ target 'WeatherApp' do
   pod 'SwiftLoader', '1.0.0'
   pod 'Swinject', '2.9.1'
   pod 'Toast-Swift', '5.1.1'
+  pod 'SDWebImage', '5.19.7'
   
   target 'WeatherAppTests' do
     inherit! :search_paths

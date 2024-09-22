@@ -8,14 +8,14 @@
 import Foundation
 
 enum Endpoint {
-    case search(query: String)
-    case forecast(query: String, daysNumber: Int)
+    case search
+    case forecast
     
     var url: String {
         switch self {
-        case .search(let query):
+        case .search:
             return "\(ConfigEnvironment.shared.baseUrl)search.json"
-        case .forecast(let query, let daysNumber):
+        case .forecast:
             return "\(ConfigEnvironment.shared.baseUrl)forecast.json"
         }
     }

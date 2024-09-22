@@ -18,18 +18,22 @@ class CityRealm: Object {
     @Persisted var lat: Double = 0.0
     @Persisted var lon: Double = 0.0
     @Persisted var url: String = ""
+    @Persisted var forecast: CityForecastRealm? = nil
     
     override init() {
         super.init()
     }
     
-    init(cityId: Int,
+    init(
+        cityId: Int,
         name: String,
         region: String,
         country: String,
         lat: Double,
         lon: Double,
-        url: String) {
+        url: String,
+        forecast: CityForecastRealm?
+    ) {
         
         self.cityId = cityId
         self.name = name
@@ -38,6 +42,7 @@ class CityRealm: Object {
         self.lat = lat
         self.lon = lon
         self.url = url
+        self.forecast = forecast
     }
     
     func convertToCity() -> City {

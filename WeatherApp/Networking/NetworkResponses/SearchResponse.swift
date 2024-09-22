@@ -24,7 +24,8 @@ struct City: Codable {
             country: country ?? "",
             lat: lat ?? 0.0,
             lon: lon ?? 0.0,
-            url: url ?? ""
+            url: url ?? "",
+            forecast: nil
         )
     }
 }

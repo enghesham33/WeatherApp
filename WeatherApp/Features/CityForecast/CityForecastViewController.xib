@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityForecastViewController" customModule="WeatherApp" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="JWe-S3-whR" id="fCe-gn-9rg"/>
+                <outlet property="cityNameLabel" destination="wja-n6-chc" id="fNE-M5-yq7"/>
+                <outlet property="forecastDataLabel" destination="sDp-ik-iOP" id="wRu-qc-cd3"/>
+                <outlet property="forecastDaysCollectionView" destination="qbO-hr-deU" id="b9q-1z-LAp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZT-ez-HnN">
+                    <rect key="frame" x="0.0" y="59" width="48" height="39"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="back"/>
+                    <connections>
+                        <action selector="backButtonClicked:" destination="-1" eventType="touchUpInside" id="caj-US-rzn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My saved cities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wja-n6-chc">
+                    <rect key="frame" x="138" y="59" width="117" height="39"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-S3-whR">
+                    <rect key="frame" x="338.33333333333331" y="59" width="54.666666666666686" height="39"/>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                    <connections>
+                        <action selector="addButtonClicked:" destination="-1" eventType="touchUpInside" id="H0w-Ik-yMB"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-ik-iOP">
+                    <rect key="frame" x="16" y="130" width="361" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-hr-deU">
+                    <rect key="frame" x="16" y="179" width="361" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="9GR-Zw-d4P"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OWe-ca-jLl">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="wja-n6-chc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="24H-b8-Ydk"/>
+                <constraint firstItem="qbO-hr-deU" firstAttribute="leading" secondItem="sDp-ik-iOP" secondAttribute="leading" id="4xA-Wn-E1I"/>
+                <constraint firstItem="FZT-ez-HnN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6bS-FE-abK"/>
+                <constraint firstItem="sDp-ik-iOP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7DH-K6-Wc8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sDp-ik-iOP" secondAttribute="trailing" constant="16" id="D46-yi-xu2"/>
+                <constraint firstItem="JWe-S3-whR" firstAttribute="top" secondItem="wja-n6-chc" secondAttribute="top" id="Drh-SD-Upy"/>
+                <constraint firstItem="wja-n6-chc" firstAttribute="bottom" secondItem="FZT-ez-HnN" secondAttribute="bottom" id="F5h-yM-MyJ"/>
+                <constraint firstItem="FZT-ez-HnN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JbE-cH-M0j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JWe-S3-whR" secondAttribute="trailing" id="bIf-0d-nw8"/>
+                <constraint firstItem="sDp-ik-iOP" firstAttribute="top" secondItem="wja-n6-chc" secondAttribute="bottom" constant="32" id="bjQ-lh-QBZ"/>
+                <constraint firstItem="qbO-hr-deU" firstAttribute="trailing" secondItem="sDp-ik-iOP" secondAttribute="trailing" id="p43-My-AIe"/>
+                <constraint firstItem="qbO-hr-deU" firstAttribute="top" secondItem="sDp-ik-iOP" secondAttribute="bottom" constant="32" id="pL7-9t-lwI"/>
+                <constraint firstItem="wja-n6-chc" firstAttribute="top" secondItem="FZT-ez-HnN" secondAttribute="top" id="ztL-UP-ewL"/>
+                <constraint firstItem="JWe-S3-whR" firstAttribute="bottom" secondItem="wja-n6-chc" secondAttribute="bottom" id="zzA-B2-Xye"/>
+            </constraints>
+            <point key="canvasLocation" x="123" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

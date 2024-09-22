@@ -23,7 +23,7 @@ class CitiesListService: CitiesListServiceProtocol {
         
         let params = ["key" : ConfigEnvironment.shared.apiKey, "q" : query]
         
-        NetworkLayer.shared.makeRequest(endPoint: .search(query: query), method: .get, parameters: params, successHandler: { data in
+        NetworkLayer.shared.makeRequest(endPoint: .search, method: .get, parameters: params, successHandler: { data in
             do {
                 let citiesArray = try JSONDecoder().decode([City].self, from: data)
                 completionHandler(citiesArray)
